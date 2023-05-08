@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ul{
+   list-style-type: none; 
+   margin: 0;
+   padding: 0;
+}
+body{
+    background: #f9f9f9;
+    min-height: 100vh;
+    /* overflow-x: hidden; */
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    /* font-size: 2em;
+    color: #359381;
+    pointer-events: none;
+    margin-right: 270px; */
+    margin-right: 150px;
+    width: 100px;
+}
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 6px 15px;
+    border-radius:  20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover, 
+.navigation a.active{
+    background-color: #359381;
+    color: #fff;
+}
+
+.searchbar{
+    margin-top: 180px;
+    margin-left: 150px;
+    width: 60%;
+}
+.filter{
+    display: none;
+}
+
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#txtPara {
+    position: absolute;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+.parallax img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+#somos-hiking {
+    background-color: #003329;
+}
+#somos-hiking .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+#somos-hiking .img-container{
+    background-image: url("../images/imgHome.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px; 
+}
+#somos-hiking .container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#somos-hiking .texto{
+    width: 50%;
+    max-width: 600px;
+    text-align: initial;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+#somos-hiking h2{
+    margin-top: 0px;
+}
+.secParques{
+    margin-top: 130px;
+    padding: 40px 40px 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.boton-categoria{
+    width: 100%;
+    background-color: #359381;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.img-parque{
+    height: 350px;
+}
+.card{
+    background-color: #359381;
+    color: #fff;
+}
+.list-group-item{
+    background-color: #359381;
+    color: #fff;
+}
+.list-group{
+    background-color: #359381;
+    color: #fff;
+}
+.card-body{
+    background-color: #359381;
+    color: #fff;
+}
+
