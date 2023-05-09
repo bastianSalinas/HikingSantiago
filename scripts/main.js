@@ -29,10 +29,20 @@ const parques = [
         titulo: "Quebrada de Macul",
         imagen: "../images/quebradas/quebradamacul.jpg",
         categoria: {
-            nombre: "Quebrada",
-            id: "quebrada"
+            nombre: "Quebradas",
+            id: "quebradas"
         },
-        valor: "gratis"
+        valor: "Gratis"
+    },
+    {
+        id: "quebrada-02",
+        titulo: "Quebrada de La Plata",
+        imagen: "../images/quebradas/quebradalaplata.jpg",
+        categoria: {
+            nombre: "Quebradas",
+            id: "quebradas"
+        },
+        valor: "Gratis"
     },
     //Parques
     {
@@ -64,6 +74,16 @@ const parques = [
             id: "parque"
         },
         valor: 3000
+    },
+    {
+        id: "parque-04",
+        titulo: "Parque Nacional Rio Clarillo",
+        imagen: "../images/parques/rioclarillo.jpg",
+        categoria: {
+            nombre: "Rios",
+            id: "rios"
+        },
+        valor: 2000
     },
     //Cerros
     {
@@ -116,23 +136,37 @@ const parques = [
         },
         valor: "Gratis"
     },
-    //Rios
+    //Santuarios
     {
-        id: "rios-01",
-        titulo: "Rio Clarillo",
-        imagen: "../images/rios/rioclarillo.jpg",
+        id: "santuario-01",
+        titulo: "Santuario de la Naturaleza el Arrayan",
+        imagen: "../images/santuarios/elarrayan.jpg",
         categoria: {
-            nombre: "Rios",
-            id: "rios"
+            nombre: "Santuarios",
+            id: "santuarios"
         },
-        valor: 2000
+        valor: 10000
+    },
+    {
+        id: "santuario-02",
+        titulo: "Santuario de la Naturaleza Yerba loca",
+        imagen: "../images/santuarios/yerbaloca.jpg",
+        categoria: {
+            nombre: "Santuarios",
+            id: "santuarios"
+        },
+        valor: 10000
     }
 ];
 
 const contenedorParques = document.querySelector("#contenedor-parques"); 
+const botonesCategoria = document.querySelectorAll(".boton-categoria"); 
 
-function cargarParques() {
-    parques.forEach(parque => {
+function cargarParques(parquesSeleccionados) {
+
+    contenedorParques.innerHTML = "";
+
+    parquesSeleccionados.forEach(parque => {
 
         const div = document.createElement("div");
         div.classList.add("col");
@@ -157,5 +191,22 @@ function cargarParques() {
         contenedorParques.append(div);
     })
 }
-console.log(parques);
-cargarParques();
+// console.log(parques);
+cargarParques(parques);
+
+
+botonesCategoria.forEach(boton => {
+    boton.addEventListener("click", (e) =>{
+        
+        botonesCategoria.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+
+        if(e.currentTarget.id != "todos"){
+            const botonCatParques = parques.filter(parque => parque.categoria.id === e.currentTarget.id);
+            cargarParques(botonCatParques);
+        } else {
+            cargarParques(parques);
+        }
+        
+    })
+})
