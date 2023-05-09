@@ -80,8 +80,8 @@ const parques = [
         titulo: "Parque Nacional Rio Clarillo",
         imagen: "../images/parques/rioclarillo.jpg",
         categoria: {
-            nombre: "Rios",
-            id: "rios"
+            nombre: "Parques",
+            id: "parques"
         },
         valor: 2000
     },
