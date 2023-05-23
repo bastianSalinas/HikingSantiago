@@ -1,4 +1,5 @@
 if (window.location.href.indexOf('index.html') > -1) {
+
     let text = document.getElementById('txtPara');
     let leaf = document.getElementById('leaf');
     let hill1 = document.getElementById('hill1');
@@ -9,7 +10,6 @@ if (window.location.href.indexOf('index.html') > -1) {
 
     window.addEventListener('scroll', () =>{
         let value = window.scrollY;
-
         text.style.marginTop = value * 2.5 + 'px';
         leaf.style.left = value * 1.5 + 'px';
         hill5.style.left = value * 1.5 + 'px';
@@ -161,6 +161,8 @@ const parques = [
 
 const contenedorParques = document.querySelector("#contenedor-parques"); 
 const botonesCategoria = document.querySelectorAll(".boton-categoria"); 
+let botonSeleccion = document.querySelectorAll(".parque-seleccion"); 
+const numero = document.querySelector("#numero");
 
 function cargarParques(parquesSeleccionados) {
 
@@ -184,12 +186,13 @@ function cargarParques(parquesSeleccionados) {
                     <div class="card-body">
                         <button type="button" class="btn btn-primary">Sitio Oficial</button>
                         <button type="button" class="btn text-white btn-info">Información</button> 
-                        <button type="button" class="btn btn-success" id="${parque.id}">Seleccionar</button>  
+                        <button type="button" class="btn btn-success parque-seleccion" id="${parque.id}">Seleccionar</button>  
                     </div>
                 </div>
         `;
         contenedorParques.append(div);
     })
+    clicBotonAgregar();
 }
 // console.log(parques);
 cargarParques(parques);
@@ -206,7 +209,37 @@ botonesCategoria.forEach(boton => {
             cargarParques(botonCatParques);
         } else {
             cargarParques(parques);
-        }
-        
+        }       
     })
 })
+
+function clicBotonAgregar(){
+    botonSeleccion = document.querySelectorAll(".parque-seleccion");
+
+    botonSeleccion.forEach(boton => {
+        boton.addEventListener("click", agregarAventura);
+    })
+}
+
+const parquesEnAventura = [];
+
+function agregarAventura(e){
+    const idBoton = e.currentTarget.id;
+    const parquesSeleccionados = parques.find(parque => parque.id === idBoton);
+
+    if(parquesEnAventura.some(parque => parque.id === idBoton)){
+        const index = parquesEnAventura.findIndex(parque => parque.id ===idBoton);
+        parquesEnAventura[index].cantidad++;
+    }else{
+        parquesSeleccionados.cantidad = 1;
+        parquesEnAventura.push(parquesSeleccionados);
+    }
+    cambiarNumero();
+    localStorage.setItem("parques-en-aventura", JSON.stringify(parquesEnAventura));
+}
+
+function cambiarNumero(){
+    let nuevoNumero = parquesEnAventura.reduce((acc, parque) => acc + parque.cantidad, 0);
+    numero.innerText = nuevoNumero;
+}
+

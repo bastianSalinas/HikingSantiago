@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-ul{
+ul, li{
    list-style-type: none; 
    margin: 0;
    padding: 0;
@@ -154,5 +154,24 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
 .card-body{
     background-color: #359381;
     color: #fff;
+}
+
+
+.boton-carrito {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #359381;
+}
+
+.numero {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+.boton-carrito.active .numero {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
 }
 
