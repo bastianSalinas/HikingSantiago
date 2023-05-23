@@ -240,6 +240,9 @@ function agregarAventura(e){
 
 function cambiarNumero(){
     let nuevoNumero = parquesEnAventura.reduce((acc, parque) => acc + parque.cantidad, 0);
+    localStorage.setItem("numeros-aventura", JSON.stringify(nuevoNumero));
     numero.innerText = nuevoNumero;
 }
+numero.innerText = localStorage.getItem("numeros-aventura");  
+
 
