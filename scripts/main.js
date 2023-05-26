@@ -102,25 +102,21 @@ function clicBotonAgregar() {
     });
   }
 
-const parquesEnAventura = [];
+  function clicBotonAgregar() {
+    botonSeleccion = document.querySelectorAll(".parque-seleccion");
+    botonSeleccion.forEach(boton => {
+      boton.addEventListener("click", (e) => {
+        const parqueSeleccionado = parques.find(parque => parque.id === e.currentTarget.id);
+        parquesEnAventura.push(parqueSeleccionado);
+        actualizarNumero();
+        guardarParquesEnAventura();
+      });
+    });
+  }
 
-function agregarAventura(e){
-    const idBoton = e.currentTarget.id;
-    const parquesSeleccionados = parques.find(parque => parque.id === idBoton);
-
-    if(parquesEnAventura.some(parque => parque.id === idBoton)){
-        const index = parquesEnAventura.findIndex(parque => parque.id ===idBoton);
-        parquesEnAventura[index].cantidad++;
-    }else{
-        parquesSeleccionados.cantidad = 1;
-        parquesEnAventura.push(parquesSeleccionados);
-    }
-    cambiarNumero();
-    localStorage.setItem("parques-en-aventura", JSON.stringify(parquesEnAventura));
-}
-
-function cambiarNumero(){
-    let nuevoNumero = parquesEnAventura.reduce((acc, parque) => acc + parque.cantidad, 0);
-    numero.innerText = nuevoNumero;
-}
-
+  function actualizarNumero() {
+    numero.innerText = parquesEnAventura.length;
+  }
+  function guardarParquesEnAventura() {
+    localStorage.setItem('parques-en-aventura', JSON.stringify(parquesEnAventura));
+  }
