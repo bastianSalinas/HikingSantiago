@@ -1,0 +1,133 @@
+
+[
+    {
+        "id": "quebrada-01",
+        "titulo": "Quebrada de Macul",
+        "imagen": "../images/quebradas/quebradamacul.jpg",
+        "categoria": {
+            "nombre": "Quebradas",
+            "id": "quebradas"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "quebrada-02",
+        "titulo": "Quebrada de La Plata",
+        "imagen": "../images/quebradas/quebradalaplata.jpg",
+        "categoria": {
+            "nombre": "Quebradas",
+            "id": "quebradas"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "parque-01",
+        "titulo": "Aguas de Ramón",
+        "imagen": "../images/parques/aguasderamon.jpg",
+        "categoria": {
+            "nombre": "Parques",
+            "id": "parques"
+        },
+        "valor": 3000
+    },
+    {
+        "id": "parque-02",
+        "titulo": "Alto el Naranjo",
+        "imagen": "../images/parques/altoelnaranjo.jpeg",
+        "categoria": {
+            "nombre": "Parques",
+            "id": "parques"
+        },
+        "valor": 3000
+    },
+    {
+        "id": "parque-03",
+        "titulo": "Salto de Apoquindo",
+        "imagen": "../images/parques/saltoapoquindo.jpg",
+        "categoria": {
+            "nombre": "Parques",
+            "id": "parque"
+        },
+        "valor": 3000
+    },
+    {
+        "id": "parque-04",
+        "titulo": "Parque Nacional Rio Clarillo",
+        "imagen": "../images/parques/rioclarillo.jpg",
+        "categoria": {
+            "nombre": "Parques",
+            "id": "parques"
+        },
+        "valor": 2000
+    },
+    {
+        "id": "cerro-01",
+        "titulo": "Cerro Carbón",
+        "imagen": "../images/cerros/cerrocarbon.jpg",
+        "categoria": {
+            "nombre": "Cerros",
+            "id": "cerros"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "cerro-02",
+        "titulo": "Cerro Manquehue",
+        "imagen": "../images/cerros/cerromanquehue.jpg",
+        "categoria": {
+            "nombre": "Cerros",
+            "id": "cerros"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "cerro-03",
+        "titulo": "Cerro Manquehuito",
+        "imagen": "../images/cerros/cerromanquehuito.jpg",
+        "categoria": {
+            "nombre": "Cerros",
+            "id": "cerros"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "cerro-04",
+        "titulo": "Cerro San Cristobal",
+        "imagen": "../images/cerros/sancristobal.jpg",
+        "categoria": {
+            "nombre": "Cerros",
+            "id": "cerros"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "cerro-05",
+        "titulo": "Mirador de Condores",
+        "imagen": "../images/cerros/miradordecondores.jpg",
+        "categoria": {
+            "nombre": "Cerros",
+            "id": "cerros"
+        },
+        "valor": "Gratis"
+    },
+    {
+        "id": "santuario-01",
+        "titulo": "Santuario de la Naturaleza el Arrayan",
+        "imagen": "../images/santuarios/elarrayan.jpg",
+        "categoria": {
+            "nombre": "Santuarios",
+            "id": "santuarios"
+        },
+        "valor": 10000
+    },
+    {
+        "id": "santuario-02",
+        "titulo": "Santuario de la Naturaleza Yerba loca",
+        "imagen": "../images/santuarios/yerbaloca.jpg",
+        "categoria": {
+            "nombre": "Santuarios",
+            "id": "santuarios"
+        },
+        "valor": 10000
+    }
+]

@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Aventuras</title>
 </head>
+
 <body>
-    <h1>Aventura!</h1>
+    <header>
+        <a href="../index.html"><img class="logo" src="../images/logo.png" alt=""></a>
+        <nav class="navigation">
+            <a href="../index.html">Home</a>
+            <a href="parques.html" class="active">Parques</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="quienesomos.html">Quienes Somos</a>
+            <a href="contacto.html">Contactanos</a>
+        </nav>
+        <div class="">
+            <li>
+                <a class="boton-menu boton-carrito" href="./aventura.html">
+                    <i class="bi bi-tree-fill"></i> Aventura <span id="numero" class="numero">0</span>
+                </a>
+            </li>
+        </div>
+        
+    </header>
+    <main>
+        <!--Body Page-->
+        <section class="secParques">
+            <div class="contOpciones">
+            <ul>
+                <li>
+                    <a class="boton-categoria boton-volver" href="../index.html">
+                        <i class="bi bi-arrow-return-left"></i> Seguir comprando
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <div id="contenedor-aventura" class="row row-cols-1 row-cols-md-2 g-4 contenedor-parques">
+                <p id="aventura-vacia" class="aventura-vacia">Tu Aventura está vacía.</p>
+
+                <div id="aventura-parques" class="aventura-parques disabled">
+                    <!-- Parques con JS -->
+                </div>
+
+                <div id="aventura-acciones" class="aventura-acciones disabled">
+                    <div class="aventura-acciones-izquierda">
+                        <button id="aventura-acciones-vaciar" class="aventura-acciones-vaciar">Vaciar aventura</button>
+                    </div>
+                    <div class="aventura-acciones-derecha">
+                        <div class="aventura-acciones-total">
+                            <p>Total:</p>
+                            <p id="total">$3000</p>
+                        </div>
+                        <button id="aventura-acciones-finalizar" class="aventura-acciones-finalizar">Vamos a la aventura!</button>
+                    </div>
+                </div>
+
+                <p id="aventura-seleccion-final" class="aventura-seleccion-final disabled">A disfrutar del Hiking! </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!--Footer Page-->
+    </footer>
+    <script src="../scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
+
 </html>

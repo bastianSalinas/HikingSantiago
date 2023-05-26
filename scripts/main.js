@@ -18,151 +18,29 @@ if (window.location.href.indexOf('index.html') > -1) {
     });
 }
 
-//--------------------Parques------------------//
-
-// PRODUCTOS
-const parques = [
-    // Parques
-    //Quebradas
-    {
-        id: "quebrada-01",
-        titulo: "Quebrada de Macul",
-        imagen: "../images/quebradas/quebradamacul.jpg",
-        categoria: {
-            nombre: "Quebradas",
-            id: "quebradas"
-        },
-        valor: "Gratis"
-    },
-    {
-        id: "quebrada-02",
-        titulo: "Quebrada de La Plata",
-        imagen: "../images/quebradas/quebradalaplata.jpg",
-        categoria: {
-            nombre: "Quebradas",
-            id: "quebradas"
-        },
-        valor: "Gratis"
-    },
-    //Parques
-    {
-        id: "parque-01",
-        titulo: "Aguas de Ramón",
-        imagen: "../images/parques/aguasderamon.jpg",
-        categoria: {
-            nombre: "Parques",
-            id: "parques"
-        },
-        valor: 3000
-    },
-    {
-        id: "parque-02",
-        titulo: "Alto el Naranjo",
-        imagen: "../images/parques/altoelnaranjo.jpeg",
-        categoria: {
-            nombre: "Parques",
-            id: "parques"
-        },
-        valor: 3000
-    },
-    {
-        id: "parque-03",
-        titulo: "Salto de Apoquindo",
-        imagen: "../images/parques/saltoapoquindo.jpg",
-        categoria: {
-            nombre: "Parques",
-            id: "parque"
-        },
-        valor: 3000
-    },
-    {
-        id: "parque-04",
-        titulo: "Parque Nacional Rio Clarillo",
-        imagen: "../images/parques/rioclarillo.jpg",
-        categoria: {
-            nombre: "Parques",
-            id: "parques"
-        },
-        valor: 2000
-    },
-    //Cerros
-    {
-        id: "cerro-01",
-        titulo: "Cerro Carbón",
-        imagen: "../images/cerros/cerrocarbon.jpg",
-        categoria: {
-            nombre: "Cerros",
-            id: "cerros"
-        },
-        valor: "Gratis"
-    },
-    {
-        id: "cerro-02",
-        titulo: "Cerro Manquehue",
-        imagen: "../images/cerros/cerromanquehue.jpg",
-        categoria: {
-            nombre: "Cerros",
-            id: "cerros"
-        },
-        valor: "Gratis"
-    },
-    {
-        id: "cerro-03",
-        titulo: "Cerro Manquehuito",
-        imagen: "../images/cerros/cerromanquehuito.jpg",
-        categoria: {
-            nombre: "Cerros",
-            id: "cerros"
-        },
-        valor: "Gratis"
-    },
-    {
-        id: "cerro-04",
-        titulo: "Cerro San Cristobal",
-        imagen: "../images/cerros/sancristobal.jpg",
-        categoria: {
-            nombre: "Cerros",
-            id: "cerros"
-        },
-        valor: "Gratis"
-    },
-    {
-        id: "cerro-05",
-        titulo: "Mirador de Condores",
-        imagen: "../images/cerros/miradordecondores.jpg",
-        categoria: {
-            nombre: "Cerros",
-            id: "cerros"
-        },
-        valor: "Gratis"
-    },
-    //Santuarios
-    {
-        id: "santuario-01",
-        titulo: "Santuario de la Naturaleza el Arrayan",
-        imagen: "../images/santuarios/elarrayan.jpg",
-        categoria: {
-            nombre: "Santuarios",
-            id: "santuarios"
-        },
-        valor: 10000
-    },
-    {
-        id: "santuario-02",
-        titulo: "Santuario de la Naturaleza Yerba loca",
-        imagen: "../images/santuarios/yerbaloca.jpg",
-        categoria: {
-            nombre: "Santuarios",
-            id: "santuarios"
-        },
-        valor: 10000
-    }
-];
+let parques = [];
+//Cargamos parques desde el archivo parques.json
+fetch("../scripts/parques.json")
+    .then(response => response.json())
+    .then(data => {
+        parques = data;
+        cargarParques(parques);
+    })
 
 const contenedorParques = document.querySelector("#contenedor-parques"); 
 const botonesCategoria = document.querySelectorAll(".boton-categoria"); 
 let botonSeleccion = document.querySelectorAll(".parque-seleccion"); 
 const numero = document.querySelector("#numero");
+
+let parquesEnAventura = [];
+// Cargar datos del almacenamiento local al iniciar la página
+window.addEventListener('DOMContentLoaded', () => {
+    const parquesGuardados = localStorage.getItem('parques-en-aventura');
+    if (parquesGuardados) {
+      parquesEnAventura = JSON.parse(parquesGuardados);
+      actualizarNumero();
+    }
+  });
 
 function cargarParques(parquesSeleccionados) {
 
@@ -191,55 +69,42 @@ function cargarParques(parquesSeleccionados) {
                 </div>
         `;
         contenedorParques.append(div);
-    })
+    });
     clicBotonAgregar();
 }
-// console.log(parques);
+
 cargarParques(parques);
 
-
 botonesCategoria.forEach(boton => {
-    boton.addEventListener("click", (e) =>{
-        
+    boton.addEventListener("click", (e) => {
+
         botonesCategoria.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
-        if(e.currentTarget.id != "todos"){
-            const botonCatParques = parques.filter(parque => parque.categoria.id === e.currentTarget.id);
-            cargarParques(botonCatParques);
+        if (e.currentTarget.id !== "todos") {
+            const categoriaSeleccionada = parques.filter(parque => parque.categoria.id === e.currentTarget.id);
+            cargarParques(categoriaSeleccionada);
         } else {
             cargarParques(parques);
-        }       
-    })
-})
+        }
+    });
+});
 
-function clicBotonAgregar(){
+function clicBotonAgregar() {
     botonSeleccion = document.querySelectorAll(".parque-seleccion");
-
     botonSeleccion.forEach(boton => {
-        boton.addEventListener("click", agregarAventura);
-    })
-}
+      boton.addEventListener("click", (e) => {
+        const parqueSeleccionado = parques.find(parque => parque.id === e.currentTarget.id);
+        parquesEnAventura.push(parqueSeleccionado);
+        actualizarNumero();
+        guardarParquesEnAventura();
+      });
+    });
+  }
 
-const parquesEnAventura = [];
-
-function agregarAventura(e){
-    const idBoton = e.currentTarget.id;
-    const parquesSeleccionados = parques.find(parque => parque.id === idBoton);
-
-    if(parquesEnAventura.some(parque => parque.id === idBoton)){
-        const index = parquesEnAventura.findIndex(parque => parque.id ===idBoton);
-        parquesEnAventura[index].cantidad++;
-    }else{
-        parquesSeleccionados.cantidad = 1;
-        parquesEnAventura.push(parquesSeleccionados);
-    }
-    cambiarNumero();
-    localStorage.setItem("parques-en-aventura", JSON.stringify(parquesEnAventura));
-}
-
-function cambiarNumero(){
-    let nuevoNumero = parquesEnAventura.reduce((acc, parque) => acc + parque.cantidad, 0);
-    numero.innerText = nuevoNumero;
-}
-
+  function actualizarNumero() {
+    numero.innerText = parquesEnAventura.length;
+  }
+  function guardarParquesEnAventura() {
+    localStorage.setItem('parques-en-aventura', JSON.stringify(parquesEnAventura));
+  }

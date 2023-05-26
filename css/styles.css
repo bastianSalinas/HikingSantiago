@@ -128,8 +128,8 @@ header{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
-    margin-top: 30px;
+    font-size: 25px;
+    margin-top: 25px;
 }
 .active{
     -webkit-box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
@@ -173,5 +173,10 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
 .boton-carrito.active .numero {
     background-color: var(--clr-main);
     color: var(--clr-white);
+}
+
+#contenedor-aventura{
+    background-color: #359381;
+    color: #fff;
 }
 
