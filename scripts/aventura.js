@@ -11,7 +11,6 @@ if(parquesEnAventura) {
     contenedorAventuraVacia.classList.add("disabled");
     contenedorAventuraParques.classList.remove("disabled");
     contenedorAventuraAcciones.classList.remove("disabled");
-    contenedorAventuraFinalizada.classList.add("disabled");
 
     contenedorAventuraParques.innerHTML = "";
     actualizarNumero();
@@ -26,8 +25,12 @@ if(parquesEnAventura) {
         div.innerHTML = `
                 <img class="aventura-imagen" src="${parque.imagen}" alt="${parque.titulo}">
                 <div class="aventura-parque-nombre">
-                    <small>Titulo</small>
+                    <small>Parque</small>
                     <h3>${parque.titulo}</h3>
+                </div>
+                <div class="aventura-parque-dificultad">
+                    <small>Dificultad</small>
+                    <h3>${parque.dificultad}</h3>
                 </div>
                 <div class="aventura-parque-km">
                     <small>Kilometros</small>
@@ -45,8 +48,7 @@ if(parquesEnAventura) {
         `
         contenedorAventuraParques.append(div);
     })
-    
 
 }else{
-
+    contenedorAventuraFinalizada.classList.add("disabled");
 }
