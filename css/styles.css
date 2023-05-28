@@ -178,5 +178,54 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
 #contenedor-aventura{
     background-color: #359381;
     color: #fff;
+    height: 600px;
 }
 
+.aventura-parques-contenedor{
+    width: 100%;
+    gap: 1.5rem;
+}
+.aventura-parques{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+.aventura-imagen{
+    width: 4rem;
+    border-radius: 1rem;
+}
+.aventura-parques small{
+    font-size: .75rem;
+}
+.aventura-parque-eliminar{
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+.aventura-acciones-derecha{
+    display: flex;
+}
+.aventura-acciones{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.aventura-acciones-vaciar{
+    border: 0;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.aventura-acciones-finalizar{
+    border: 0;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.disabled{
+    display: none;
+}

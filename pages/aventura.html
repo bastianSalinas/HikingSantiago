@@ -38,40 +38,38 @@
             <div class="contOpciones">
             <ul>
                 <li>
-                    <a class="boton-categoria boton-volver" href="../index.html">
-                        <i class="bi bi-arrow-return-left"></i> Seguir comprando
+                    <a class="boton-categoria boton-volver" href="./parques.html">
+                        <i class="bi bi-arrow-return-left"></i> Seguir eligiendo
                     </a>
                 </li>
             </ul>
         </div>
             <div id="contenedor-aventura" class="row row-cols-1 row-cols-md-2 g-4 contenedor-parques">
+                
                 <p id="aventura-vacia" class="aventura-vacia">Tu Aventura está vacía.</p>
-
-                <div id="aventura-parques" class="aventura-parques disabled">
-                    <!-- Parques con JS -->
+                <div id="aventura-parques" class="aventura-parques-contenedor disabled">
+                    <!-- Los productos se obtienen desde el localStorage con JS -->
                 </div>
-
-                <div id="aventura-acciones" class="aventura-acciones disabled">
-                    <div class="aventura-acciones-izquierda">
-                        <button id="aventura-acciones-vaciar" class="aventura-acciones-vaciar">Vaciar aventura</button>
-                    </div>
-                    <div class="aventura-acciones-derecha">
-                        <div class="aventura-acciones-total">
-                            <p>Total:</p>
-                            <p id="total">$3000</p>
+                    <div id="aventura-acciones" class="aventura-acciones disabled">
+                        <div class="aventura-acciones-izquierda">
+                            <button class="aventura-acciones-vaciar">Vaciar Aventura</button>
                         </div>
-                        <button id="aventura-acciones-finalizar" class="aventura-acciones-finalizar">Vamos a la aventura!</button>
+                        <div class="aventura-acciones-derecha">
+                            <div class="carrito-acciones-total">
+                                <p>Total: </p>
+                                <p id="total">$3000</p>
+                            </div>
+                            <button class="aventura-acciones-finalizar">Viajar ahora</button>
+                        </div>
                     </div>
-                </div>
-
-                <p id="aventura-seleccion-final" class="aventura-seleccion-final disabled">A disfrutar del Hiking! </p>
+                    <p id="aventura-finalizada">A recorrer todos los lindos parques de Santiago!</p>
             </div>
         </section>
     </main>
     <footer>
         <!--Footer Page-->
     </footer>
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/aventura.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 

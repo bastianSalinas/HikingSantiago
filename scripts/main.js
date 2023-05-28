@@ -55,8 +55,7 @@ function cargarParques(parquesSeleccionados) {
                     <img src="${parque.imagen}" class="img-parque" alt="${parque.titulo}">
                     <div class="card-body">
                         <h5 class="card-title">${parque.titulo}</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                            to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">${parque.km} / ${parque.tiempo}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">${parque.valor}</li>
