@@ -231,3 +231,56 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
 .disabled{
     display: none;
 }
+
+.aos-all {
+    width: 1000px;
+    max-width: 98%;
+    margin: 15vh auto 0 auto;
+  }
+  
+  .aos-item {
+    display: inline-block;
+    float: left;
+    width: 33.3333%;
+    height: 300px;
+    padding: 20px;
+    position: relative; /* Agregado */
+  }
+  
+  .aos-item__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    float: left;
+    background: #359381;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Agregado */
+  }
+  
+  .aos-item__inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agregado */
+  }
+  
+  .aos-item__inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(53, 147, 129, 0.7); /* Color de fondo del texto */
+  }
+  
+  .aos-item__inner h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

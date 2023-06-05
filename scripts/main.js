@@ -121,3 +121,46 @@ if (window.location.href.indexOf('parques.html') > -1) {
     localStorage.setItem('parques-en-aventura', JSON.stringify(parquesEnAventura));
   }
 }
+
+if (window.location.href.indexOf('galeria.html') > -1) {
+
+  let parques = [];
+  //Cargamos parques desde el archivo parques.json
+  fetch("../scripts/parques.json")
+    .then(response => response.json())
+    .then(data => {
+      parques = data;
+    })
+
+  setInterval(addItem, 300);
+
+  let itemsCounter = 1;
+  let container = document.getElementById('aos-demo');
+
+  function addItem () {
+    
+    if (itemsCounter > parques.length) return;
+
+    const item = document.createElement('div');
+    item.classList.add('aos-item');
+    item.setAttribute('data-aos', 'fade-up');
+  
+    const parqueActual = parques[itemsCounter - 1];
+    const imagenURL = parqueActual.imagen;
+  
+    const itemInnerHTML = document.createElement('div');
+    itemInnerHTML.classList.add('aos-item__inner');
+    const imagen = document.createElement('img');
+    imagen.src = imagenURL;
+  
+    const titulo = document.createElement('h3');
+    titulo.textContent = parqueActual.titulo;
+  
+    itemInnerHTML.appendChild(imagen);
+    itemInnerHTML.appendChild(titulo);
+  
+    item.appendChild(itemInnerHTML);
+    container.appendChild(item);
+    itemsCounter++;
+  }
+}
