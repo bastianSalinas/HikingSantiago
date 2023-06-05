@@ -240,7 +240,6 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
   
   .aos-item {
     display: inline-block;
-    float: left;
     width: 33.3333%;
     height: 300px;
     padding: 20px;
