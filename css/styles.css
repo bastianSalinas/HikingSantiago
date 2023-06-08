@@ -243,7 +243,7 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
     width: 33.3333%;
     height: 300px;
     padding: 20px;
-    position: relative; /* Agregado */
+    position: relative; 
   }
   
   .aos-item__inner {
@@ -254,13 +254,13 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
     background: #359381;
     text-align: center;
     color: #fff;
-    overflow: hidden; /* Agregado */
+    overflow: hidden;
   }
   
   .aos-item__inner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Agregado */
+    object-fit: cover; 
   }
   
   .aos-item__inner::before {
@@ -270,7 +270,7 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(53, 147, 129, 0.7); /* Color de fondo del texto */
+    background-color: rgba(53, 147, 129, 0.7);
   }
   
   .aos-item__inner h3 {
@@ -283,3 +283,29 @@ box-shadow: -11px 10px 11px -5px rgba(0,0,0,0.38);
     font-weight: bold;
   }
   
+  #lista-usuarios {
+    width: 1000px;
+    max-width: 98%;
+    margin: 15vh auto 0 auto;
+  }
+
+  .trabajadores {
+    display: inline-block;
+    width: 33.3333%;
+    height: 300px;
+    padding: 20px;
+    position: relative;
+  }
+  #lista-servicios {
+    width: 1000px;
+    max-width: 98%;
+    margin: 15vh auto 0 auto;
+  }
+
+  .servicios{
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    padding: 20px;
+    position: relative;
+  }
