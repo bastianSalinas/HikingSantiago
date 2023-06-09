@@ -8,8 +8,9 @@ fetch(url)
         data.forEach(trabajador => {
             const div = document.createElement("div");
             div.classList.add("trabajadores");
-            div.textContent = trabajador.name+"("+trabajador.username+")"+"\n"+trabajador.email+"\n"+trabajador.address.city+"\n"+trabajador.phone;
+            div.textContent =trabajador.name+"  ("+trabajador.username+")"+"\n"+trabajador.email;
             contTrabajadores.append(div);
         });
     })
+    .catch(error => console.log("Error en traer información de la API", error))
 

@@ -8,9 +8,9 @@ fetch(urlS)
         data.todos.forEach(servicio => {
             const div = document.createElement("div");
             div.classList.add("servicios");
-            div.textContent = servicio.todo
-            console.log(servicio.todo);
+            div.textContent = servicio.todo;
             contServicios.append(div);
         })
         
     })
+    .catch(error => console.log("Error en traer información de la API", error))
